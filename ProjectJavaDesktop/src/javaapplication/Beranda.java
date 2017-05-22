@@ -45,7 +45,7 @@ public class Beranda extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
