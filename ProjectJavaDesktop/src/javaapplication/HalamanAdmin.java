@@ -29,12 +29,12 @@ public class HalamanAdmin extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBtnDataMhs = new javax.swing.JButton();
+        jBtnDataDosen = new javax.swing.JButton();
+        jBtnDataAsisten = new javax.swing.JButton();
+        jBtnDataKelas = new javax.swing.JButton();
+        jBtnDataMakul = new javax.swing.JButton();
+        jBtnDataNilai = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -48,17 +48,22 @@ public class HalamanAdmin extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setText("DATA MAHASISWA");
+        jBtnDataMhs.setText("DATA MAHASISWA");
 
-        jButton3.setText("DATA DOSEN");
+        jBtnDataDosen.setText("DATA DOSEN");
 
-        jButton5.setText("DATA ASISTEN");
+        jBtnDataAsisten.setText("DATA ASISTEN");
 
-        jButton6.setText("DATA KELAS");
+        jBtnDataKelas.setText("DATA KELAS");
 
-        jButton7.setText("DATA MATAKULIAH");
+        jBtnDataMakul.setText("DATA MATAKULIAH");
+        jBtnDataMakul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataMakulActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("DATA NILAI PRAKTIKKUM");
+        jBtnDataNilai.setText("DATA NILAI PRAKTIKKUM");
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,12 +76,12 @@ public class HalamanAdmin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jBtnDataKelas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDataAsisten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDataDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDataMhs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDataMakul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDataNilai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
@@ -89,17 +94,17 @@ public class HalamanAdmin extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(50, 50, 50)
-                .addComponent(jButton1)
+                .addComponent(jBtnDataMhs)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
+                .addComponent(jBtnDataDosen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton5)
+                .addComponent(jBtnDataAsisten)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
+                .addComponent(jBtnDataKelas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton7)
+                .addComponent(jBtnDataMakul)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(jBtnDataNilai)
                 .addContainerGap(96, Short.MAX_VALUE))
         );
 
@@ -133,6 +138,12 @@ public class HalamanAdmin extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
     }//GEN-LAST:event_formWindowActivated
+
+    private void jBtnDataMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataMakulActionPerformed
+        // TODO add your handling code here:
+        crudMakul cm = new crudMakul();
+        cm.setVisible(true);
+    }//GEN-LAST:event_jBtnDataMakulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,12 +184,12 @@ public class HalamanAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jBtnDataAsisten;
+    private javax.swing.JButton jBtnDataDosen;
+    private javax.swing.JButton jBtnDataKelas;
+    private javax.swing.JButton jBtnDataMakul;
+    private javax.swing.JButton jBtnDataMhs;
+    private javax.swing.JButton jBtnDataNilai;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
