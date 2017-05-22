@@ -27,25 +27,35 @@ public class crudMakul extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnTambahAsisten = new javax.swing.JButton();
-        jBtnTampilAsisten = new javax.swing.JButton();
-        jBtnUpdateAsisten = new javax.swing.JButton();
+        jBtnTambahMakul = new javax.swing.JButton();
+        jBtnTampilMakul = new javax.swing.JButton();
+        jBtnUpdateMakul = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBtnTambahAsisten.setText("Tambah");
-
-        jBtnTampilAsisten.setText("Tampil");
-        jBtnTampilAsisten.addActionListener(new java.awt.event.ActionListener() {
+        jBtnTambahMakul.setText("Tambah");
+        jBtnTambahMakul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnTampilAsistenActionPerformed(evt);
+                jBtnTambahMakulActionPerformed(evt);
             }
         });
 
-        jBtnUpdateAsisten.setText("Update");
+        jBtnTampilMakul.setText("Tampil");
+        jBtnTampilMakul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTampilMakulActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("MENU ASISTEN");
+        jBtnUpdateMakul.setText("Update");
+        jBtnUpdateMakul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnUpdateMakulActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("MENU MATAKULIAH");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,9 +63,9 @@ public class crudMakul extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jBtnTambahAsisten)
+                .addComponent(jBtnTambahMakul)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnUpdateAsisten)
+                .addComponent(jBtnUpdateMakul)
                 .addGap(61, 61, 61))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,8 +74,8 @@ public class crudMakul extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jBtnTampilAsisten)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                        .addComponent(jBtnTampilMakul)))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,19 +84,31 @@ public class crudMakul extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnTambahAsisten)
-                    .addComponent(jBtnUpdateAsisten))
+                    .addComponent(jBtnTambahMakul)
+                    .addComponent(jBtnUpdateMakul))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jBtnTampilAsisten)
+                .addComponent(jBtnTampilMakul)
                 .addGap(95, 95, 95))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnTampilAsistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilAsistenActionPerformed
+    private void jBtnTampilMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilMakulActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnTampilAsistenActionPerformed
+    }//GEN-LAST:event_jBtnTampilMakulActionPerformed
+
+    private void jBtnTambahMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTambahMakulActionPerformed
+        // TODO add your handling code here:
+        fTambahMakul ftm = new fTambahMakul();
+        ftm.setVisible(true);
+    }//GEN-LAST:event_jBtnTambahMakulActionPerformed
+
+    private void jBtnUpdateMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateMakulActionPerformed
+        // TODO add your handling code here:
+        fUpdateMakul ftm = new fUpdateMakul();
+        ftm.setVisible(true);
+    }//GEN-LAST:event_jBtnUpdateMakulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,9 +149,9 @@ public class crudMakul extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnTambahAsisten;
-    private javax.swing.JButton jBtnTampilAsisten;
-    private javax.swing.JButton jBtnUpdateAsisten;
+    private javax.swing.JButton jBtnTambahMakul;
+    private javax.swing.JButton jBtnTampilMakul;
+    private javax.swing.JButton jBtnUpdateMakul;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
