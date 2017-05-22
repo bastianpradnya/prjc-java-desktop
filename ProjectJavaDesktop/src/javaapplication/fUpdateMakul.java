@@ -71,9 +71,11 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         jTxtKdMakul = new javax.swing.JTextField();
         jTxtNamaMakul = new javax.swing.JTextField();
         jTxtSks = new javax.swing.JTextField();
-        jBtnSimpan = new javax.swing.JButton();
+        jBtnUpdateMakul = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTPpesan = new javax.swing.JTextPane();
+        jbtnCariMakul = new javax.swing.JButton();
+        jBtnHapusMakul = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,19 +85,28 @@ public final class fUpdateMakul extends javax.swing.JFrame {
 
         jLabel3.setText("Jumlah SKS");
 
-        jBtnSimpan.setText("Simpan");
-        jBtnSimpan.addMouseListener(new java.awt.event.MouseAdapter() {
+        jBtnUpdateMakul.setText("Update");
+        jBtnUpdateMakul.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnSimpanMouseClicked(evt);
+                jBtnUpdateMakulMouseClicked(evt);
             }
         });
-        jBtnSimpan.addActionListener(new java.awt.event.ActionListener() {
+        jBtnUpdateMakul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSimpanActionPerformed(evt);
+                jBtnUpdateMakulActionPerformed(evt);
             }
         });
 
         jScrollPane1.setViewportView(jTPpesan);
+
+        jbtnCariMakul.setText("Cari");
+        jbtnCariMakul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCariMakulActionPerformed(evt);
+            }
+        });
+
+        jBtnHapusMakul.setText("Hapus");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,20 +115,27 @@ public final class fUpdateMakul extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(15, 15, 15)))
+                        .addGap(15, 15, 15))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jBtnUpdateMakul)
+                        .addComponent(jLabel3)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTxtKdMakul, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                    .addComponent(jTxtNamaMakul)
-                    .addComponent(jTxtSks)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jBtnSimpan)
-                        .addGap(24, 24, 24)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTxtKdMakul, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                            .addComponent(jTxtNamaMakul)
+                            .addComponent(jTxtSks))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jbtnCariMakul)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 109, Short.MAX_VALUE)
+                        .addComponent(jBtnHapusMakul)
+                        .addGap(75, 75, 75))))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -126,10 +144,11 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTxtKdMakul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtKdMakul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnCariMakul))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -139,7 +158,9 @@ public final class fUpdateMakul extends javax.swing.JFrame {
                     .addComponent(jTxtSks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(89, 89, 89)
-                .addComponent(jBtnSimpan)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnUpdateMakul)
+                    .addComponent(jBtnHapusMakul))
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -148,16 +169,16 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSimpanActionPerformed
+    private void jBtnUpdateMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateMakulActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnSimpanActionPerformed
+    }//GEN-LAST:event_jBtnUpdateMakulActionPerformed
 
-    private void jBtnSimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSimpanMouseClicked
+    private void jBtnUpdateMakulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnUpdateMakulMouseClicked
         // TODO add your handling code here:
-        String sql="INSERT into tbl_matakuliah (kode_makul, nama_makul, jml_sks)VALUE('"+
-                    jTxtKdMakul.getText()+"','"+
-                    jTxtNamaMakul.getText()+"',"+
-                    jTxtSks.getText()+");";
+        String sql="UPDATE tbl_matakuliah"+
+                   "SET nama_makul='"+jTxtNamaMakul.getText()+ "'," +
+                   "jml_sks="+jTxtSks.getText()+" "+ 
+                   "WHERE kd_Makul='"+jTxtKdMakul.getText()+"'";
                      
         try {
             st = conn.createStatement();
@@ -172,7 +193,36 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         setKosongkan();
         jTxtKdMakul.requestFocus();
                     
-    }//GEN-LAST:event_jBtnSimpanMouseClicked
+    }//GEN-LAST:event_jBtnUpdateMakulMouseClicked
+
+    private void jbtnCariMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCariMakulActionPerformed
+        // TODO add your handling code here:
+        String sql="SELECT * FROM tbl_matakuliah WHERE kode_Makul='"+jTxtKdMakul.getText()+"'";
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            
+        } catch (SQLException ex){
+            System.out.printf("Kesalahan Query" + sql);
+        }
+        
+        int size = 0;
+        try{
+            while (rs.next()){
+                size++;
+                jTxtNamaMakul.setText(rs.getString("nama_makul").toString());
+                jTxtSks.setText(rs.getString("jml_sks").toString());
+            }
+            if(size==0){
+                JOptionPane.showMessageDialog(this, "Data tidak ditemukan");
+                return;
+            }
+            rs.close();
+            st.close();
+        } catch(SQLException ex){
+        
+        }
+    }//GEN-LAST:event_jbtnCariMakulActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,7 +291,8 @@ public final class fUpdateMakul extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnSimpan;
+    private javax.swing.JButton jBtnHapusMakul;
+    private javax.swing.JButton jBtnUpdateMakul;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,5 +301,6 @@ public final class fUpdateMakul extends javax.swing.JFrame {
     private javax.swing.JTextField jTxtKdMakul;
     private javax.swing.JTextField jTxtNamaMakul;
     private javax.swing.JTextField jTxtSks;
+    private javax.swing.JButton jbtnCariMakul;
     // End of variables declaration//GEN-END:variables
 }
