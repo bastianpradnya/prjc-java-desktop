@@ -107,6 +107,11 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         });
 
         jBtnHapusMakul.setText("Hapus");
+        jBtnHapusMakul.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnHapusMakulActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,7 +183,7 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         String sql="UPDATE tbl_matakuliah"+
                    "SET nama_makul='"+jTxtNamaMakul.getText()+ "'," +
                    "jml_sks="+jTxtSks.getText()+" "+ 
-                   "WHERE kd_Makul='"+jTxtKdMakul.getText()+"'";
+                   "WHERE kode_makul='"+jTxtKdMakul.getText()+"'";
                      
         try {
             st = conn.createStatement();
@@ -223,6 +228,25 @@ public final class fUpdateMakul extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_jbtnCariMakulActionPerformed
+
+    private void jBtnHapusMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHapusMakulActionPerformed
+        // TODO add your handling code here:
+        String sql="DELETE FROM tbl_matakuliah WHERE kode_makul='"+jTxtKdMakul.getText()+"'";
+        try {
+            st = conn.createStatement();
+            st.execute(sql); //menjalankan query
+            
+        } catch (SQLException e){ //jika gagal menghapus
+            JOptionPane.showMessageDialog(this, "Penghapusan Gagal");
+            setKosongkan();
+            jTxtKdMakul.requestFocus();
+            return;
+        }
+        
+        JOptionPane.showMessageDialog(this,"Data berhasil dihapus");
+        setKosongkan();
+        jTxtKdMakul.requestFocus();
+    }//GEN-LAST:event_jBtnHapusMakulActionPerformed
 
     /**
      * @param args the command line arguments
