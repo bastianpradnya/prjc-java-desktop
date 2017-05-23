@@ -111,7 +111,7 @@ public class fLihatNilai extends javax.swing.JFrame {
         jTblNilai = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTPpesan = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        jBtnTutup = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTxtNim = new javax.swing.JTextField();
         jBtnLihat = new javax.swing.JButton();
@@ -132,10 +132,10 @@ public class fLihatNilai extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jTPpesan);
 
-        jButton1.setText("Tutup");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBtnTutup.setText("Tutup");
+        jBtnTutup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBtnTutupActionPerformed(evt);
             }
         });
 
@@ -161,7 +161,7 @@ public class fLihatNilai extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))))
+                                .addComponent(jBtnTutup))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -183,7 +183,7 @@ public class fLihatNilai extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(jBtnTutup))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(jLabel1)
@@ -202,10 +202,10 @@ public class fLihatNilai extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBtnTutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTutupActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBtnTutupActionPerformed
 
     private void jBtnLihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLihatActionPerformed
         // TODO add your handling code here:
@@ -264,7 +264,7 @@ public class fLihatNilai extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnLihat;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBtnTutup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

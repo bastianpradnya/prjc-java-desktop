@@ -51,6 +51,11 @@ public class Beranda extends javax.swing.JFrame {
 
         jButton3.setText("LIHAT NILAI");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("LOGIN");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -160,9 +165,16 @@ public class Beranda extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
         Tentang ttg = new Tentang();
-        ttg.setVisible(true);// TODO add your handling code here:
+        ttg.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        fLihatNilai fln = new fLihatNilai();
+        fln.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

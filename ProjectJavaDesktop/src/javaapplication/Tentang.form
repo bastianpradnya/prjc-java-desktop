@@ -45,20 +45,20 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="351" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="457" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -69,9 +69,9 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="214" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -96,7 +96,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="Ini Aplikasi Sistem Informasi Nilai&#xa;praktikkum Stmik AKAKOM&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;&#xa;Copyright@KecerdasanBuatan"/>
+                <Property name="text" type="java.lang.String" value="Aplikasi Sistem Informasi Nilai Praktikum&#xa; &#xa;Sekolah Tinggi Manajemen Informasi dan Komputer&#xa;AKAKOM YOGYAKARTA&#xa;&#xa;&#xa;Copyright@PrdTeam&#xa;135410106"/>
               </Properties>
             </Component>
           </SubComponents>
