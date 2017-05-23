@@ -18,13 +18,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Pradnya
  */
-public class fTampilMakul extends javax.swing.JFrame {
+public class fTampilAsisten extends javax.swing.JFrame {
     public Connection conn;
     public Statement st;
     /**
      * Creates new form fTampilMakul
      */
-    public fTampilMakul() {
+    public fTampilAsisten() {
         initComponents();
         TampilData();
         
@@ -57,18 +57,21 @@ public class fTampilMakul extends javax.swing.JFrame {
     void TampilData (){
       DefaultTableModel TableData = new DefaultTableModel();
         TableData.addColumn("Kode");
-        TableData.addColumn("Nama Matakuliah");
-        TableData.addColumn("SKS");
+        TableData.addColumn("NIM");
+        TableData.addColumn("Nama");
+        TableData.addColumn("Alamat");
+        TableData.addColumn("Email");
+        TableData.addColumn("Telp");
         
         try {
             koneksi("localhost","sin_praktikum","root","");
-            String sql = "select * from tbl_matakuliah";
+            String sql = "select * from tbl_asisten";
             st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql); //menjalankan query
             while (rs.next()) {
-                TableData.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3)});
+                TableData.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)});
             }
-           jTblMakul.setModel(TableData);
+           jTblAsisten.setModel(TableData);
         } catch (Exception e) {
             
         }
@@ -87,24 +90,24 @@ public class fTampilMakul extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblMakul = new javax.swing.JTable();
+        jTblAsisten = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTPpesan = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("TAMPIL MATAKULIAH");
+        jLabel1.setText("TAMPIL ASISTEN");
 
-        jTblMakul.setModel(new javax.swing.table.DefaultTableModel(
+        jTblAsisten.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Kode", "Nama Matakuliah", "SKS"
+                "Kode", "NIM", "Nama", "Alamat", "Email", "Telp"
             }
         ));
-        jScrollPane1.setViewportView(jTblMakul);
+        jScrollPane1.setViewportView(jTblAsisten);
 
         jScrollPane2.setViewportView(jTPpesan);
 
@@ -126,27 +129,26 @@ public class fTampilMakul extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                                .addComponent(jButton1)))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,20 +176,21 @@ public class fTampilMakul extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fTampilMakul.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilAsisten.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fTampilMakul.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilAsisten.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fTampilMakul.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilAsisten.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fTampilMakul.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilAsisten.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fTampilMakul().setVisible(true);
+                new fTampilAsisten().setVisible(true);
             }
         });
     }
@@ -198,6 +201,6 @@ public class fTampilMakul extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTPpesan;
-    private javax.swing.JTable jTblMakul;
+    private javax.swing.JTable jTblAsisten;
     // End of variables declaration//GEN-END:variables
 }
