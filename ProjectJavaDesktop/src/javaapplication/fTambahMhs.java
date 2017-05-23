@@ -51,7 +51,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
     }
     
     void setKosongkan(){
-        jTxtNIM.setText(null);
+        jTxtNim.setText(null);
         jTxtNama.setText(null);
         jTxtAngkatan.setText(null);
         jTxtAlamat.setText(null);
@@ -72,7 +72,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTxtNIM = new javax.swing.JTextField();
+        jTxtNim = new javax.swing.JTextField();
         jTxtNama = new javax.swing.JTextField();
         jTxtAngkatan = new javax.swing.JTextField();
         jTxtAlamat = new javax.swing.JTextField();
@@ -129,7 +129,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
                         .addComponent(jLabel6)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTxtNIM)
+                    .addComponent(jTxtNim)
                     .addComponent(jTxtNama)
                     .addComponent(jTxtAngkatan)
                     .addComponent(jTxtAlamat)
@@ -150,7 +150,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTxtNIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTxtNim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -188,7 +188,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
     private void jBtnSimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSimpanMouseClicked
         // TODO add your handling code here:
         String sql="INSERT into tbl_mahasiswa (nim, nama, angkatan, alamat,telp, email)VALUE('"+
-                    jTxtNIM.getText()+"','"+
+                    jTxtNim.getText()+"','"+
                     jTxtNama.getText()+"','"+
                     jTxtAngkatan.getText()+"','"+
                     jTxtAlamat.getText()+"','"+
@@ -200,13 +200,13 @@ public final class fTambahMhs extends javax.swing.JFrame {
             st.execute(sql); //menjalankan query
         } catch (SQLException e){
             setKosongkan();
-            jTxtNIM.requestFocus();
+            jTxtNim.requestFocus();
             return;
         }
         
         JOptionPane.showMessageDialog(this,"Data berhasil disimpan");
         setKosongkan();
-        jTxtNIM.requestFocus();
+        jTxtNim.requestFocus();
                     
     }//GEN-LAST:event_jBtnSimpanMouseClicked
 
@@ -265,8 +265,8 @@ public final class fTambahMhs extends javax.swing.JFrame {
     private javax.swing.JTextField jTxtAlamat;
     private javax.swing.JTextField jTxtAngkatan;
     private javax.swing.JTextField jTxtEmail;
-    private javax.swing.JTextField jTxtNIM;
     private javax.swing.JTextField jTxtNama;
+    private javax.swing.JTextField jTxtNim;
     private javax.swing.JTextField jTxtTelp;
     // End of variables declaration//GEN-END:variables
 }
