@@ -82,6 +82,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
         jTPpesan = new javax.swing.JTextPane();
         jLabel6 = new javax.swing.JLabel();
         jTxtEmail = new javax.swing.JTextField();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,6 +112,13 @@ public final class fTambahMhs extends javax.swing.JFrame {
 
         jLabel6.setText("Email");
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,7 +146,9 @@ public final class fTambahMhs extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jBtnSimpan)
                         .addGap(24, 24, 24)))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jBtnBatal)
+                .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -172,7 +182,9 @@ public final class fTambahMhs extends javax.swing.JFrame {
                     .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBtnSimpan)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnSimpan)
+                    .addComponent(jBtnBatal))
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -209,6 +221,11 @@ public final class fTambahMhs extends javax.swing.JFrame {
         jTxtNim.requestFocus();
                     
     }//GEN-LAST:event_jBtnSimpanMouseClicked
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,6 +270,7 @@ public final class fTambahMhs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnSimpan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -31,6 +31,7 @@ public class crudKelas extends javax.swing.JFrame {
         jBtnTampilKelas = new javax.swing.JButton();
         jBtnUpdateKelas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,25 +48,32 @@ public class crudKelas extends javax.swing.JFrame {
 
         jLabel1.setText("MENU KELAS");
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jBtnTambahKelas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnUpdateKelas)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
+                        .addGap(29, 29, 29)
+                        .addComponent(jBtnTambahKelas)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnTampilKelas)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnUpdateKelas)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnBatal))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBtnTampilKelas)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel1)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,10 +83,10 @@ public class crudKelas extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnTambahKelas)
-                    .addComponent(jBtnUpdateKelas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jBtnTampilKelas)
-                .addGap(95, 95, 95))
+                    .addComponent(jBtnUpdateKelas)
+                    .addComponent(jBtnTampilKelas)
+                    .addComponent(jBtnBatal))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,6 +95,11 @@ public class crudKelas extends javax.swing.JFrame {
     private void jBtnTampilKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilKelasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnTampilKelasActionPerformed
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,6 +140,7 @@ public class crudKelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnTambahKelas;
     private javax.swing.JButton jBtnTampilKelas;
     private javax.swing.JButton jBtnUpdateKelas;

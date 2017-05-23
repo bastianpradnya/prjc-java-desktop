@@ -18,13 +18,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Pradnya
  */
-public class fLihatNilai extends javax.swing.JFrame {
+public class LihatNilai extends javax.swing.JFrame {
     public Connection conn;
     public Statement st;
     /**
      * Creates new form fTampilMakul
      */
-    public fLihatNilai() {
+    public LihatNilai() {
         initComponents();
         TampilData();
         
@@ -204,7 +204,7 @@ public class fLihatNilai extends javax.swing.JFrame {
 
     private void jBtnTutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTutupActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_jBtnTutupActionPerformed
 
     private void jBtnLihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnLihatActionPerformed
@@ -229,14 +229,30 @@ public class fLihatNilai extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fLihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fLihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fLihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fLihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LihatNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -257,7 +273,7 @@ public class fLihatNilai extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fLihatNilai().setVisible(true);
+                new LihatNilai().setVisible(true);
             }
         });
     }

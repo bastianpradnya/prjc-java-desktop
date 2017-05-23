@@ -31,6 +31,7 @@ public class crudMhs extends javax.swing.JFrame {
         jBtnTampilMhs = new javax.swing.JButton();
         jBtnUpdateMhs = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,25 +53,32 @@ public class crudMhs extends javax.swing.JFrame {
 
         jLabel1.setText("MENU MAHASISWA");
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jBtnTambahMhs)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnUpdateMhs)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
+                        .addGap(29, 29, 29)
+                        .addComponent(jBtnTambahMhs)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnTampilMhs)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnUpdateMhs)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtnBatal))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBtnTampilMhs)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel1)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,10 +88,10 @@ public class crudMhs extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnTambahMhs)
-                    .addComponent(jBtnUpdateMhs))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jBtnTampilMhs)
-                .addGap(95, 95, 95))
+                    .addComponent(jBtnUpdateMhs)
+                    .addComponent(jBtnTampilMhs)
+                    .addComponent(jBtnBatal))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +106,11 @@ public class crudMhs extends javax.swing.JFrame {
          fTambahMhs ft = new fTambahMhs();
          ft.setVisible(true);
     }//GEN-LAST:event_jBtnUpdateMhsActionPerformed
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +148,7 @@ public class crudMhs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnTambahMhs;
     private javax.swing.JButton jBtnTampilMhs;
     private javax.swing.JButton jBtnUpdateMhs;

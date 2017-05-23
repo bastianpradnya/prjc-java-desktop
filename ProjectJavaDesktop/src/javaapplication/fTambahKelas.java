@@ -98,6 +98,7 @@ public final class fTambahKelas extends javax.swing.JFrame {
         jTxtPukul = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jCbKdMakul = new javax.swing.JComboBox<>();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,6 +130,13 @@ public final class fTambahKelas extends javax.swing.JFrame {
 
         jCbKdMakul.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Kode Makul-" }));
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,6 +167,8 @@ public final class fTambahKelas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(167, 167, 167)
                 .addComponent(jBtnSimpan)
+                .addGap(44, 44, 44)
+                .addComponent(jBtnBatal)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -198,7 +208,9 @@ public final class fTambahKelas extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTxtPukul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnSimpan)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jBtnSimpan)
+                            .addComponent(jBtnBatal))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
@@ -234,6 +246,11 @@ public final class fTambahKelas extends javax.swing.JFrame {
         jTxtKdKelas.requestFocus();
                     
     }//GEN-LAST:event_jBtnSimpanMouseClicked
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -526,6 +543,7 @@ public final class fTambahKelas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnSimpan;
     private javax.swing.JComboBox<String> jCbKdMakul;
     private javax.swing.JLabel jLabel1;

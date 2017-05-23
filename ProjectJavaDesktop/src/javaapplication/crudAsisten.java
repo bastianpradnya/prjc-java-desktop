@@ -31,10 +31,16 @@ public class crudAsisten extends javax.swing.JFrame {
         jBtnTampilAsisten = new javax.swing.JButton();
         jBtnUpdateAsisten = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jBtnTambahAsisten.setText("Tambah");
+        jBtnTambahAsisten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTambahAsistenActionPerformed(evt);
+            }
+        });
 
         jBtnTampilAsisten.setText("Tampil");
         jBtnTampilAsisten.addActionListener(new java.awt.event.ActionListener() {
@@ -47,25 +53,32 @@ public class crudAsisten extends javax.swing.JFrame {
 
         jLabel1.setText("MENU ASISTEN");
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jBtnTambahAsisten)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnUpdateAsisten)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
+                        .addGap(29, 29, 29)
+                        .addComponent(jBtnTambahAsisten)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnTampilAsisten)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnUpdateAsisten)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnBatal))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBtnTampilAsisten)))
-                .addContainerGap(183, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel1)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,10 +88,10 @@ public class crudAsisten extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnTambahAsisten)
-                    .addComponent(jBtnUpdateAsisten))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jBtnTampilAsisten)
-                .addGap(95, 95, 95))
+                    .addComponent(jBtnUpdateAsisten)
+                    .addComponent(jBtnTampilAsisten)
+                    .addComponent(jBtnBatal))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,6 +100,15 @@ public class crudAsisten extends javax.swing.JFrame {
     private void jBtnTampilAsistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilAsistenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnTampilAsistenActionPerformed
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
+
+    private void jBtnTambahAsistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTambahAsistenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnTambahAsistenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +147,7 @@ public class crudAsisten extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnTambahAsisten;
     private javax.swing.JButton jBtnTampilAsisten;
     private javax.swing.JButton jBtnUpdateAsisten;

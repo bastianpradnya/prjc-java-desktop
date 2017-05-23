@@ -70,21 +70,26 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jBtnDataKelas" max="32767" attributes="0"/>
-                          <Component id="jBtnDataAsisten" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jBtnDataDosen" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jBtnDataMhs" max="32767" attributes="0"/>
-                          <Component id="jBtnDataMakul" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jBtnDataNilai" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jBtnDataKelas" max="32767" attributes="0"/>
+                                  <Component id="jBtnDataAsisten" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBtnDataDosen" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBtnDataMhs" max="32767" attributes="0"/>
+                                  <Component id="jBtnDataMakul" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jBtnDataNilai" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -105,7 +110,9 @@
                       <Component id="jBtnDataMakul" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jBtnDataNilai" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="96" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -115,21 +122,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="DATA MAHASISWA"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDataMhsActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBtnDataDosen">
               <Properties>
                 <Property name="text" type="java.lang.String" value="DATA DOSEN"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDataDosenActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBtnDataAsisten">
               <Properties>
                 <Property name="text" type="java.lang.String" value="DATA ASISTEN"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDataAsistenActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBtnDataKelas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="DATA KELAS"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDataKelasActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBtnDataMakul">
               <Properties>
@@ -143,6 +162,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="DATA NILAI PRAKTIKKUM"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDataNilaiActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
@@ -154,6 +176,14 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="ADMIN"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LOGOUT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

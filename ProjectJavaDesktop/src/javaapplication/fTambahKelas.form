@@ -55,6 +55,8 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="167" max="-2" attributes="0"/>
               <Component id="jBtnSimpan" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Component id="jBtnBatal" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
@@ -104,7 +106,10 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jTxtPukul" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jBtnSimpan" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBtnSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBtnBatal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -184,6 +189,14 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBtnBatal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Batal"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnBatalActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

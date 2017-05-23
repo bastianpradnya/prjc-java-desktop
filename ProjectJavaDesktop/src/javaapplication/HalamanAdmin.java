@@ -36,6 +36,7 @@ public class HalamanAdmin extends javax.swing.JFrame {
         jBtnDataMakul = new javax.swing.JButton();
         jBtnDataNilai = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -49,12 +50,32 @@ public class HalamanAdmin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jBtnDataMhs.setText("DATA MAHASISWA");
+        jBtnDataMhs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataMhsActionPerformed(evt);
+            }
+        });
 
         jBtnDataDosen.setText("DATA DOSEN");
+        jBtnDataDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataDosenActionPerformed(evt);
+            }
+        });
 
         jBtnDataAsisten.setText("DATA ASISTEN");
+        jBtnDataAsisten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataAsistenActionPerformed(evt);
+            }
+        });
 
         jBtnDataKelas.setText("DATA KELAS");
+        jBtnDataKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataKelasActionPerformed(evt);
+            }
+        });
 
         jBtnDataMakul.setText("DATA MATAKULIAH");
         jBtnDataMakul.addActionListener(new java.awt.event.ActionListener() {
@@ -64,29 +85,44 @@ public class HalamanAdmin extends javax.swing.JFrame {
         });
 
         jBtnDataNilai.setText("DATA NILAI PRAKTIKKUM");
+        jBtnDataNilai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDataNilaiActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Microsoft JhengHei UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ADMIN");
+
+        jButton1.setText("LOGOUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnDataKelas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnDataAsisten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnDataDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnDataMhs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnDataMakul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnDataNilai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBtnDataKelas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnDataAsisten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnDataDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnDataMhs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnDataMakul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBtnDataNilai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +141,9 @@ public class HalamanAdmin extends javax.swing.JFrame {
                 .addComponent(jBtnDataMakul)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBtnDataNilai)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -141,9 +179,44 @@ public class HalamanAdmin extends javax.swing.JFrame {
 
     private void jBtnDataMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataMakulActionPerformed
         // TODO add your handling code here:
-        crudMakul cm = new crudMakul();
-        cm.setVisible(true);
+        crudMakul cmkl = new crudMakul();
+        cmkl.setVisible(true);
     }//GEN-LAST:event_jBtnDataMakulActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jBtnDataMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataMhsActionPerformed
+        // TODO add your handling code here:
+        crudMhs cmhs = new crudMhs();
+        cmhs.setVisible(true);
+    }//GEN-LAST:event_jBtnDataMhsActionPerformed
+
+    private void jBtnDataDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataDosenActionPerformed
+        // TODO add your handling code here:
+        crudDosen cdsn = new crudDosen();
+        cdsn.setVisible(true);
+    }//GEN-LAST:event_jBtnDataDosenActionPerformed
+
+    private void jBtnDataAsistenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataAsistenActionPerformed
+        // TODO add your handling code here:
+        crudAsisten casist = new crudAsisten();
+        casist.setVisible(true);
+    }//GEN-LAST:event_jBtnDataAsistenActionPerformed
+
+    private void jBtnDataKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataKelasActionPerformed
+        // TODO add your handling code here:
+        crudKelas ckls = new crudKelas();
+        ckls.setVisible(true);
+    }//GEN-LAST:event_jBtnDataKelasActionPerformed
+
+    private void jBtnDataNilaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDataNilaiActionPerformed
+        // TODO add your handling code here:
+        crudNilai cnl = new crudNilai();
+        cnl.setVisible(true);
+    }//GEN-LAST:event_jBtnDataNilaiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +263,7 @@ public class HalamanAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jBtnDataMakul;
     private javax.swing.JButton jBtnDataMhs;
     private javax.swing.JButton jBtnDataNilai;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

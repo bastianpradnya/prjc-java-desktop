@@ -31,6 +31,7 @@ public class crudMakul extends javax.swing.JFrame {
         jBtnTampilMakul = new javax.swing.JButton();
         jBtnUpdateMakul = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,25 +58,32 @@ public class crudMakul extends javax.swing.JFrame {
 
         jLabel1.setText("MENU MATAKULIAH");
 
+        jBtnBatal.setText("Batal");
+        jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnBatalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jBtnTambahMakul)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnUpdateMakul)
-                .addGap(61, 61, 61))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1))
+                        .addGap(29, 29, 29)
+                        .addComponent(jBtnTambahMakul)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnTampilMakul)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnUpdateMakul)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnBatal))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jBtnTampilMakul)))
-                .addContainerGap(165, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel1)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,10 +93,10 @@ public class crudMakul extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnTambahMakul)
-                    .addComponent(jBtnUpdateMakul))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jBtnTampilMakul)
-                .addGap(95, 95, 95))
+                    .addComponent(jBtnUpdateMakul)
+                    .addComponent(jBtnTampilMakul)
+                    .addComponent(jBtnBatal))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,6 +117,11 @@ public class crudMakul extends javax.swing.JFrame {
         fUpdateMakul ftm = new fUpdateMakul();
         ftm.setVisible(true);
     }//GEN-LAST:event_jBtnUpdateMakulActionPerformed
+
+    private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jBtnBatalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +162,7 @@ public class crudMakul extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnBatal;
     private javax.swing.JButton jBtnTambahMakul;
     private javax.swing.JButton jBtnTampilMakul;
     private javax.swing.JButton jBtnUpdateMakul;

@@ -9,12 +9,12 @@ package javaapplication;
  *
  * @author Pradnya
  */
-public class crudDosen extends javax.swing.JFrame {
+public class crudNilai extends javax.swing.JFrame {
 
     /**
      * Creates new form crudMhs
      */
-    public crudDosen() {
+    public crudNilai() {
         initComponents();
     }
 
@@ -27,26 +27,31 @@ public class crudDosen extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBtnTambahDosen = new javax.swing.JButton();
-        jBtnTampilDosen = new javax.swing.JButton();
-        jBtnUpdateDosen = new javax.swing.JButton();
+        jBtnTambahNilai = new javax.swing.JButton();
+        jBtnTampilNilai = new javax.swing.JButton();
+        jBtnUpdateNilai = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jBtnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBtnTambahDosen.setText("Tambah");
-
-        jBtnTampilDosen.setText("Tampil");
-        jBtnTampilDosen.addActionListener(new java.awt.event.ActionListener() {
+        jBtnTambahNilai.setText("Tambah");
+        jBtnTambahNilai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnTampilDosenActionPerformed(evt);
+                jBtnTambahNilaiActionPerformed(evt);
             }
         });
 
-        jBtnUpdateDosen.setText("Update");
+        jBtnTampilNilai.setText("Tampil");
+        jBtnTampilNilai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTampilNilaiActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setText("MENU DOSEN");
+        jBtnUpdateNilai.setText("Update");
+
+        jLabel1.setText("MENU NILAI");
 
         jBtnBatal.setText("Batal");
         jBtnBatal.addActionListener(new java.awt.event.ActionListener() {
@@ -63,28 +68,28 @@ public class crudDosen extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addComponent(jBtnTambahDosen)
+                        .addComponent(jBtnTambahNilai)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnTampilDosen)
+                        .addComponent(jBtnTampilNilai)
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnUpdateDosen)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtnUpdateNilai)
+                        .addGap(18, 18, 18)
                         .addComponent(jBtnBatal))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
+                        .addGap(140, 140, 140)
                         .addComponent(jLabel1)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(80, 80, 80)
+                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnTambahDosen)
-                    .addComponent(jBtnUpdateDosen)
-                    .addComponent(jBtnTampilDosen)
+                    .addComponent(jBtnTambahNilai)
+                    .addComponent(jBtnUpdateNilai)
+                    .addComponent(jBtnTampilNilai)
                     .addComponent(jBtnBatal))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
@@ -92,14 +97,20 @@ public class crudDosen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnTampilDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilDosenActionPerformed
+    private void jBtnTampilNilaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilNilaiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnTampilDosenActionPerformed
+    }//GEN-LAST:event_jBtnTampilNilaiActionPerformed
 
     private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jBtnBatalActionPerformed
+
+    private void jBtnTambahNilaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTambahNilaiActionPerformed
+        // TODO add your handling code here:
+        fTambahNilai ftn = new fTambahNilai();
+        ftn.setVisible(true);
+    }//GEN-LAST:event_jBtnTambahNilaiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,13 +129,13 @@ public class crudDosen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(crudDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crudNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(crudDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crudNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(crudDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crudNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(crudDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crudNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -134,16 +145,16 @@ public class crudDosen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new crudDosen().setVisible(true);
+                new crudNilai().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnBatal;
-    private javax.swing.JButton jBtnTambahDosen;
-    private javax.swing.JButton jBtnTampilDosen;
-    private javax.swing.JButton jBtnUpdateDosen;
+    private javax.swing.JButton jBtnTambahNilai;
+    private javax.swing.JButton jBtnTampilNilai;
+    private javax.swing.JButton jBtnUpdateNilai;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
