@@ -44,6 +44,11 @@ public class crudMhs extends javax.swing.JFrame {
         });
 
         jBtnUpdateMhs.setText("Update");
+        jBtnUpdateMhs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnUpdateMhsActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("MENU MAHASISWA");
 
@@ -87,6 +92,12 @@ public class crudMhs extends javax.swing.JFrame {
     private void jBtnTampilMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTampilMhsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnTampilMhsActionPerformed
+
+    private void jBtnUpdateMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateMhsActionPerformed
+        // TODO add your handling code here:
+         fTambahMhs ft = new fTambahMhs();
+         ft.setVisible(true);
+    }//GEN-LAST:event_jBtnUpdateMhsActionPerformed
 
     /**
      * @param args the command line arguments
