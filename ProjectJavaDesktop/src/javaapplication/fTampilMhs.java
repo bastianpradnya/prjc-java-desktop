@@ -18,34 +18,58 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Pradnya
  */
-public class fTampilDosen extends javax.swing.JFrame {
-    Koneksi kon =new Koneksi();
+public class fTampilMhs extends javax.swing.JFrame {
+    public Connection conn;
+    public Statement st;
     /**
      * Creates new form fTampilMakul
      */
-    public fTampilDosen() {
+    public fTampilMhs() {
         initComponents();
         TampilData();
         
     }
     
+    void koneksi(String server, String db, String user, String passwd){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e){
+            System.out.println("Driver tidak bisa di load");
+            e.printStackTrace();
+            return;
+        }
+            //System.out.print("Driver berhasil di load\n");
+            System.out.println("Driver berhasil di load");
+            conn=null;
+            try {
+                conn=DriverManager.getConnection("jdbc:mysql://"+server+":3306/"+db,user,passwd);    
+            } catch (SQLException s){
+                System.out.println("Tidak Berhasil koneksi");
+                s.printStackTrace();
+                return;
+            }
+            //System.out.print("Driver di Load dan Koneksi berhasil\n");
+            System.out.println("Driver di Load dan Koneksi berhasil");
+    }
+    
     void TampilData (){
       DefaultTableModel TableData = new DefaultTableModel();
-        TableData.addColumn("NIDN");
+        TableData.addColumn("NIM");
         TableData.addColumn("Nama");
+        TableData.addColumn("Angkatan");
         TableData.addColumn("Alamat");
-        TableData.addColumn("Telp");
         TableData.addColumn("Email");
+        TableData.addColumn("Telp");
         
         try {
-            kon.konek();
-            String sql = "select * from tbl_dosen";
-            kon.st = kon.conn.createStatement();
-            kon.rs = kon.st.executeQuery(sql); //menjalankan query
-            while (kon.rs.next()) {
-                TableData.addRow(new Object[]{kon.rs.getString(1),kon.rs.getString(2),kon.rs.getString(3),kon.rs.getString(4),kon.rs.getString(5)});
+            koneksi("localhost","sin_praktikum","root","");
+            String sql = "select * from tbl_mahasiswa";
+            st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql); //menjalankan query
+            while (rs.next()) {
+                TableData.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)});
             }
-           jTblAsisten.setModel(TableData);
+           jTblMhs.setModel(TableData);
         } catch (Exception e) {
             
         }
@@ -64,17 +88,17 @@ public class fTampilDosen extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTblAsisten = new javax.swing.JTable();
+        jTblMhs = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        BtnTutup = new javax.swing.JButton();
-        BtnTambah = new javax.swing.JButton();
-        BtnUpdate = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        BtnTambahMhs = new javax.swing.JButton();
+        BtnUpdateMhs = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jTblAsisten.setModel(new javax.swing.table.DefaultTableModel(
+        jTblMhs.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -82,30 +106,29 @@ public class fTampilDosen extends javax.swing.JFrame {
                 "Kode", "NIM", "Nama", "Alamat", "Email", "Telp"
             }
         ));
-        jScrollPane1.setViewportView(jTblAsisten);
+        jScrollPane1.setViewportView(jTblMhs);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DATA DOSEN");
+        jLabel1.setText("DATA MAHASISWA");
 
-        BtnTutup.setText("Tutup");
-        BtnTutup.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Tutup");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTutupActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        BtnTambah.setText("TAMBAH");
-        BtnTambah.addActionListener(new java.awt.event.ActionListener() {
+        BtnTambahMhs.setText("TAMBAH");
+        BtnTambahMhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnTambahActionPerformed(evt);
+                BtnTambahMhsActionPerformed(evt);
             }
         });
 
-        BtnUpdate.setText("UPDATE");
-        BtnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        BtnUpdateMhs.setText("UPDATE");
+        BtnUpdateMhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnUpdateActionPerformed(evt);
+                BtnUpdateMhsActionPerformed(evt);
             }
         });
 
@@ -113,34 +136,35 @@ public class fTampilDosen extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnTambah)
-                        .addGap(18, 18, 18)
-                        .addComponent(BtnUpdate)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(BtnTambahMhs)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnUpdateMhs)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnTutup)
-                        .addGap(20, 20, 20))))
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(329, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(319, 319, 319))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnUpdate)
-                    .addComponent(BtnTambah)
-                    .addComponent(BtnTutup))
-                .addContainerGap(13, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(BtnTambahMhs)
+                    .addComponent(BtnUpdateMhs))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -157,20 +181,20 @@ public class fTampilDosen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnTutupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTutupActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_BtnTutupActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void BtnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahActionPerformed
-        fTambahDosen td = new fTambahDosen();
-        td.setVisible(true);
-    }//GEN-LAST:event_BtnTambahActionPerformed
+    private void BtnTambahMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnTambahMhsActionPerformed
+        fTambahMhs tm = new fTambahMhs();
+        tm.setVisible(true);
+    }//GEN-LAST:event_BtnTambahMhsActionPerformed
 
-    private void BtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnUpdateActionPerformed
-        fUpdateDosen ud =new fUpdateDosen();
-        ud.setVisible(true);
-    }//GEN-LAST:event_BtnUpdateActionPerformed
+    private void BtnUpdateMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnUpdateMhsActionPerformed
+        fUpdateMhs um = new fUpdateMhs();
+        um.setVisible(true);
+    }//GEN-LAST:event_BtnUpdateMhsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +213,13 @@ public class fTampilDosen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fTampilDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fTampilDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fTampilDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fTampilDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fTampilMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -205,18 +229,18 @@ public class fTampilDosen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fTampilDosen().setVisible(true);
+                new fTampilMhs().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnTambah;
-    private javax.swing.JButton BtnTutup;
-    private javax.swing.JButton BtnUpdate;
+    private javax.swing.JButton BtnTambahMhs;
+    private javax.swing.JButton BtnUpdateMhs;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTblAsisten;
+    private javax.swing.JTable jTblMhs;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,22 +12,24 @@ import javax.swing.JOptionPane;
  *
  * @author student
  */
-public final class fTambahNilai extends javax.swing.JFrame {
+public final class fUpdateNilai extends javax.swing.JFrame {
     Koneksi kon = new Koneksi();
     /**
      * Creates new form Praktik1
      */
-    public fTambahNilai() {
+    public fUpdateNilai() {
         initComponents();
         setKosongkan();
-        tampilNim();
-        tampilKelas();
-        tampilAsisten();
-        tampilNidn();
+
     }
 
     
     void setKosongkan(){
+        jTxtIdNilai.setText(null);
+        jTxtNim.setText(null);
+        jTxtKdKelas.setText(null);
+        jTxtKdAsisten.setText(null);
+        jTxtNidn.setText(null); 
         jTxtNlap1.setText(null);
         jTxtNlap2.setText(null);
         jTxtNlap3.setText(null);
@@ -44,77 +46,6 @@ public final class fTambahNilai extends javax.swing.JFrame {
         jTxtNlap14.setText(null);
     }
     
-    void tampilNim() {
-        try {
-            kon.konek();
-            String sql = "select nim from tbl_mahasiswa";
-            kon.st = kon.conn.createStatement();
-            kon.rs = kon.st.executeQuery(sql); //menjalankan query
-            while(kon.rs.next()){
-                jCbNim.addItem(kon.rs.getString("nim"));
-            }
-            kon.rs.last();
-            int jumlahdata = kon.rs.getRow();
-            kon.rs.first();
-            kon.rs.close(); kon.st.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    void tampilKelas() {
-        try {
-            kon.konek();
-            String sql = "select kode_kelas from tbl_kelas";
-            kon.st = kon.conn.createStatement();
-            kon.rs = kon.st.executeQuery(sql); //menjalankan query
-            while(kon.rs.next()){
-                jCbKdKelas.addItem(kon.rs.getString("kode_kelas"));
-            }
-            kon.rs.last();
-            int jumlahdata = kon.rs.getRow();
-            kon.rs.first();
-            kon.rs.close(); kon.st.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    void tampilAsisten() {
-        try {
-            kon.konek();
-            String sql = "select kode_asisten from tbl_asisten";
-            kon.st = kon.conn.createStatement();
-            kon.rs = kon.st.executeQuery(sql); //menjalankan query
-            while(kon.rs.next()){
-                jCbKdAsisten.addItem(kon.rs.getString("kode_asisten"));
-            }
-            kon.rs.last();
-            int jumlahdata = kon.rs.getRow();
-            kon.rs.first();
-            kon.rs.close(); kon.st.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-    
-    void tampilNidn() {
-        try {
-            kon.konek();
-            String sql = "select nidn from tbl_dosen";
-            kon.st = kon.conn.createStatement();
-            kon.rs = kon.st.executeQuery(sql); //menjalankan query
-            while(kon.rs.next()){
-                jCbNidn.addItem(kon.rs.getString("nidn"));
-            }
-            kon.rs.last();
-            int jumlahdata = kon.rs.getRow();
-            kon.rs.first();
-            kon.rs.close(); kon.st.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,10 +59,6 @@ public final class fTambahNilai extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jCbNidn = new javax.swing.JComboBox<>();
-        jCbKdAsisten = new javax.swing.JComboBox<>();
-        jCbKdKelas = new javax.swing.JComboBox<>();
-        jCbNim = new javax.swing.JComboBox<>();
         jTxtIdNilai = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -168,8 +95,14 @@ public final class fTambahNilai extends javax.swing.JFrame {
         jTxtNlap6 = new javax.swing.JTextField();
         NIDN7 = new javax.swing.JLabel();
         jTxtNlap7 = new javax.swing.JTextField();
-        jBtnSimpan = new javax.swing.JButton();
+        jBtnUpdate = new javax.swing.JButton();
         jBtnBatal = new javax.swing.JButton();
+        jTxtNim = new javax.swing.JTextField();
+        jTxtKdKelas = new javax.swing.JTextField();
+        jTxtKdAsisten = new javax.swing.JTextField();
+        jTxtNidn = new javax.swing.JTextField();
+        jBtnCari = new javax.swing.JButton();
+        jBtnHapus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -178,14 +111,6 @@ public final class fTambahNilai extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INPUT NILAI");
-
-        jCbNidn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih NIDN-" }));
-
-        jCbKdAsisten.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Kode Asisten-" }));
-
-        jCbKdKelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Kode Kelas-" }));
-
-        jCbNim.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih NIM-" }));
 
         jLabel3.setText("ID Nilai");
 
@@ -394,15 +319,15 @@ public final class fTambahNilai extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        jBtnSimpan.setText("Simpan");
-        jBtnSimpan.addMouseListener(new java.awt.event.MouseAdapter() {
+        jBtnUpdate.setText("Update");
+        jBtnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBtnSimpanMouseClicked(evt);
+                jBtnUpdateMouseClicked(evt);
             }
         });
-        jBtnSimpan.addActionListener(new java.awt.event.ActionListener() {
+        jBtnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnSimpanActionPerformed(evt);
+                jBtnUpdateActionPerformed(evt);
             }
         });
 
@@ -413,6 +338,20 @@ public final class fTambahNilai extends javax.swing.JFrame {
             }
         });
 
+        jBtnCari.setText("Cari");
+        jBtnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCariActionPerformed(evt);
+            }
+        });
+
+        jBtnHapus.setText("Hapus");
+        jBtnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnHapusActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -420,14 +359,18 @@ public final class fTambahNilai extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnSimpan)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jBtnUpdate)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnHapus)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBtnBatal))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(88, 88, 88)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -441,11 +384,13 @@ public final class fTambahNilai extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCbKdAsisten, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCbNidn, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCbNim, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCbKdKelas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTxtIdNilai, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTxtIdNilai, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                            .addComponent(jTxtNim)
+                            .addComponent(jTxtKdKelas)
+                            .addComponent(jTxtKdAsisten)
+                            .addComponent(jTxtNidn))
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnCari)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jSeparator1)
@@ -461,23 +406,24 @@ public final class fTambahNilai extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtIdNilai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(jBtnCari))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCbNim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jTxtNim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCbKdKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jTxtKdKelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCbKdAsisten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jTxtKdAsisten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCbNidn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NIDN))
+                    .addComponent(NIDN)
+                    .addComponent(jTxtNidn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -485,8 +431,9 @@ public final class fTambahNilai extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnBatal)
-                    .addComponent(jBtnSimpan))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jBtnUpdate)
+                    .addComponent(jBtnHapus))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -503,36 +450,28 @@ public final class fTambahNilai extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBtnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSimpanActionPerformed
+    private void jBtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnSimpanActionPerformed
+    }//GEN-LAST:event_jBtnUpdateActionPerformed
 
-    private void jBtnSimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnSimpanMouseClicked
+    private void jBtnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnUpdateMouseClicked
         // TODO add your handling code here:
-        String sql="INSERT into tbl_nilai (id_nilai, nim, kode_kelas, kode_asisten, nidn," +
-                   " nilai_laporan1,  nilai_laporan2,  nilai_laporan3,  nilai_laporan4," +
-                   " nilai_laporan5,  nilai_laporan6,  nilai_laporan7,  nilai_laporan8," +
-                   " nilai_laporan9,  nilai_laporan10,  nilai_laporan11,  nilai_laporan12," +
-                   " nilai_laporan13,  nilai_laporan14)VALUE('" +
-                    jTxtIdNilai.getText()+"','"+
-                    jCbNim.getSelectedItem().toString()+"','"+
-                    jCbKdKelas.getSelectedItem().toString()+"','"+
-                    jCbKdAsisten.getSelectedItem().toString()+"','"+
-                    jCbNidn.getSelectedItem().toString()+"', "+
-                    jTxtNlap1.getText()+","+
-                    jTxtNlap2.getText()+","+
-                    jTxtNlap3.getText()+","+
-                    jTxtNlap4.getText()+","+
-                    jTxtNlap5.getText()+","+
-                    jTxtNlap6.getText()+","+
-                    jTxtNlap7.getText()+","+
-                    jTxtNlap8.getText()+","+
-                    jTxtNlap9.getText()+","+
-                    jTxtNlap10.getText()+","+
-                    jTxtNlap11.getText()+","+
-                    jTxtNlap12.getText()+","+
-                    jTxtNlap13.getText()+","+
-                    jTxtNlap14.getText()+")";
+         String sql="UPDATE tbl_nilai " +
+                    "SET nilai_laporan1="+jTxtNlap1.getText()+", "+
+                    "nilai_laporan2="+jTxtNlap2.getText()+", "+
+                    "nilai_laporan3="+jTxtNlap3.getText()+", "+
+                    "nilai_laporan4="+jTxtNlap4.getText()+", "+
+                    "nilai_laporan5="+jTxtNlap5.getText()+", "+
+                    "nilai_laporan6="+jTxtNlap6.getText()+", "+
+                    "nilai_laporan7="+jTxtNlap7.getText()+", "+
+                    "nilai_laporan8="+jTxtNlap8.getText()+", "+
+                    "nilai_laporan9="+jTxtNlap9.getText()+", "+
+                    "nilai_laporan10="+jTxtNlap10.getText()+", "+
+                    "nilai_laporan11="+jTxtNlap11.getText()+", "+
+                    "nilai_laporan12="+jTxtNlap12.getText()+", "+
+                    "nilai_laporan13="+jTxtNlap13.getText()+", "+
+                    "nilai_laporan14="+jTxtNlap14.getText()+" "+
+                    "WHERE id_nilai="+jTxtIdNilai.getText()+";";
                      
         try {
             kon.konek();
@@ -540,15 +479,16 @@ public final class fTambahNilai extends javax.swing.JFrame {
             kon.st.execute(sql); //menjalankan query
         } catch (SQLException e){
             setKosongkan();
+            e.printStackTrace();
             jTxtIdNilai.requestFocus();
             return;
         }
         
-        JOptionPane.showMessageDialog(this,"Data berhasil disimpan");
+        JOptionPane.showMessageDialog(this,"Data berhasil diupdate");
         setKosongkan();
         jTxtIdNilai.requestFocus();
       
-    }//GEN-LAST:event_jBtnSimpanMouseClicked
+    }//GEN-LAST:event_jBtnUpdateMouseClicked
 
     private void jTxtNlap6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNlap6ActionPerformed
      // TODO add your handling code here:
@@ -579,6 +519,76 @@ public final class fTambahNilai extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTxtNlap5ActionPerformed
 
+    private void jBtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCariActionPerformed
+        // TODO add your handling code here:
+        String sql="SELECT * FROM tbl_nilai WHERE id_nilai='"+jTxtIdNilai.getText()+"'";
+        try {
+            kon.konek();
+            kon.st = kon.conn.createStatement();
+            kon.rs = kon.st.executeQuery(sql);
+            
+        } catch (SQLException ex){
+            System.out.printf("Kesalahan Query" + sql);
+        }
+        
+        int size = 0;
+        try{
+            while (kon.rs.next()){
+                size++;
+                jTxtNim.setText(kon.rs.getString("nim").toString());
+                jTxtNim.setEditable(false);
+                jTxtKdKelas.setText(kon.rs.getString("kode_kelas").toString());
+                jTxtKdKelas.setEditable(false);
+                jTxtKdAsisten.setText(kon.rs.getString("kode_asisten").toString());
+                jTxtKdAsisten.setEditable(false);
+                jTxtNidn.setText(kon.rs.getString("nidn").toString());
+                jTxtNidn.setEditable(false);
+                jTxtNlap1.setText(kon.rs.getString("nilai_laporan1").toString());
+                jTxtNlap2.setText(kon.rs.getString("nilai_laporan2").toString());
+                jTxtNlap3.setText(kon.rs.getString("nilai_laporan3").toString());
+                jTxtNlap4.setText(kon.rs.getString("nilai_laporan4").toString());
+                jTxtNlap5.setText(kon.rs.getString("nilai_laporan5").toString());
+                jTxtNlap6.setText(kon.rs.getString("nilai_laporan6").toString());
+                jTxtNlap7.setText(kon.rs.getString("nilai_laporan7").toString());
+                jTxtNlap8.setText(kon.rs.getString("nilai_laporan8").toString());
+                jTxtNlap9.setText(kon.rs.getString("nilai_laporan9").toString());
+                jTxtNlap10.setText(kon.rs.getString("nilai_laporan10").toString());
+                jTxtNlap11.setText(kon.rs.getString("nilai_laporan11").toString());
+                jTxtNlap12.setText(kon.rs.getString("nilai_laporan12").toString());
+                jTxtNlap13.setText(kon.rs.getString("nilai_laporan13").toString());
+                jTxtNlap14.setText(kon.rs.getString("nilai_laporan14").toString());
+            }
+            if(size==0){
+                JOptionPane.showMessageDialog(this, "Data tidak ditemukan");
+                return;
+            }
+            kon.rs.close();
+            kon.st.close();
+        } catch(SQLException ex){
+        
+        }
+        
+    }//GEN-LAST:event_jBtnCariActionPerformed
+
+    private void jBtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHapusActionPerformed
+        // TODO add your handling code here:
+        String sql="DELETE FROM tbl_nilai WHERE id_nilai='"+jTxtIdNilai.getText()+"'";
+        try {
+            kon.st = kon.conn.createStatement();
+            kon.st.execute(sql); //menjalankan query
+            
+        } catch (SQLException e){ //jika gagal menghapus
+            JOptionPane.showMessageDialog(this, "Penghapusan Gagal");
+            setKosongkan();
+            jTxtIdNilai.requestFocus();
+            return;
+        }
+        
+        JOptionPane.showMessageDialog(this,"Data berhasil dihapus");
+        setKosongkan();
+        jTxtIdNilai.requestFocus();
+    }//GEN-LAST:event_jBtnHapusActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -596,14 +606,30 @@ public final class fTambahNilai extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fTambahNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fTambahNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fTambahNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fTambahNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateNilai.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -624,7 +650,7 @@ public final class fTambahNilai extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fTambahNilai().setVisible(true);
+                new fUpdateNilai().setVisible(true);
             }
         });
     }
@@ -646,11 +672,9 @@ public final class fTambahNilai extends javax.swing.JFrame {
     private javax.swing.JLabel NIDN8;
     private javax.swing.JLabel NIDN9;
     private javax.swing.JButton jBtnBatal;
-    private javax.swing.JButton jBtnSimpan;
-    private javax.swing.JComboBox<String> jCbKdAsisten;
-    private javax.swing.JComboBox<String> jCbKdKelas;
-    private javax.swing.JComboBox<String> jCbNidn;
-    private javax.swing.JComboBox<String> jCbNim;
+    private javax.swing.JButton jBtnCari;
+    private javax.swing.JButton jBtnHapus;
+    private javax.swing.JButton jBtnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -661,6 +685,10 @@ public final class fTambahNilai extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTxtIdNilai;
+    private javax.swing.JTextField jTxtKdAsisten;
+    private javax.swing.JTextField jTxtKdKelas;
+    private javax.swing.JTextField jTxtNidn;
+    private javax.swing.JTextField jTxtNim;
     private javax.swing.JTextField jTxtNlap1;
     private javax.swing.JTextField jTxtNlap10;
     private javax.swing.JTextField jTxtNlap11;

@@ -12,21 +12,19 @@ import javax.swing.JOptionPane;
  *
  * @author student
  */
-public final class fUpdateDosen extends javax.swing.JFrame {
+public final class fUpdateMhs extends javax.swing.JFrame {
     Koneksi kon = new Koneksi();
-    /**
-     * Creates new form Praktik1
-     */
-    public fUpdateDosen() {
+    
+    public fUpdateMhs() {
         initComponents();
         setKosongkan();
     }
 
-    
     void setKosongkan(){
-        jTxtNidn.setText(null);
+        jTxtNim.setText(null);
         jTxtNama.setText(null);
-        jTextAreaAlamat.setText(null);
+        jTxtAngkatan.setText(null);
+        jTxtAreaAlamat.setText(null);
         jTxtEmail.setText(null);
         jTxtTelp.setText(null);
         
@@ -41,22 +39,24 @@ public final class fUpdateDosen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTxtNidn = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jTxtNim = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTxtNama = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTxtAngkatan = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTxtEmail = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jTxtTelp = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jBtnUpdateMakul = new javax.swing.JButton();
         jBtnHapusMakul = new javax.swing.JButton();
         jBtnBatal = new javax.swing.JButton();
-        jbtnCariMakul = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaAlamat = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        jbtnCariMhs = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTxtAreaAlamat = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
@@ -64,9 +64,11 @@ public final class fUpdateDosen extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel1.setText("NIDN");
+        jLabel1.setText("NIM");
 
         jLabel3.setText("Nama");
+
+        jLabel2.setText("Angkatan");
 
         jLabel4.setText("Alamat");
 
@@ -100,109 +102,122 @@ public final class fUpdateDosen extends javax.swing.JFrame {
             }
         });
 
-        jbtnCariMakul.setText("Cari");
-        jbtnCariMakul.addActionListener(new java.awt.event.ActionListener() {
+        jbtnCariMhs.setText("Cari");
+        jbtnCariMhs.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnCariMakulActionPerformed(evt);
+                jbtnCariMhsActionPerformed(evt);
             }
         });
 
-        jTextAreaAlamat.setColumns(20);
-        jTextAreaAlamat.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaAlamat);
+        jTxtAreaAlamat.setColumns(20);
+        jTxtAreaAlamat.setRows(5);
+        jScrollPane1.setViewportView(jTxtAreaAlamat);
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("UPDATE DATA DOSEN");
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("UPDATE DATA MAHASISWA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jBtnUpdateMakul)
+                .addGap(18, 18, 18)
+                .addComponent(jBtnHapusMakul)
+                .addGap(18, 18, 18)
+                .addComponent(jBtnBatal)
+                .addGap(84, 84, 84))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
-                                .addGap(21, 21, 21)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3))
+                                .addGap(40, 40, 40)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTxtTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTxtNama)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel3))
-                                        .addGap(35, 35, 35)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jTxtNidn, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jbtnCariMakul))
-                                            .addComponent(jTxtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(jBtnUpdateMakul)
+                                        .addComponent(jTxtNim, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jbtnCariMhs)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(jSeparator2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
                         .addGap(18, 18, 18)
-                        .addComponent(jBtnHapusMakul)
-                        .addGap(18, 18, 18)
-                        .addComponent(jBtnBatal)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTxtTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTxtAngkatan, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(46, 46, 46))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTxtNidn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnCariMakul))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTxtNim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtnCariMhs))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTxtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtAngkatan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 30, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTxtTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel5)
+                    .addComponent(jTxtTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBtnUpdateMakul)
+                    .addComponent(jBtnBatal)
                     .addComponent(jBtnHapusMakul)
-                    .addComponent(jBtnBatal))
-                .addGap(31, 31, 31))
+                    .addComponent(jBtnUpdateMakul))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,13 +233,14 @@ public final class fUpdateDosen extends javax.swing.JFrame {
 
     private void jBtnUpdateMakulMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnUpdateMakulMouseClicked
         // TODO add your handling code here:
-        String sql="UPDATE tbl_dosen "+
-                   "SET nidn='"+jTxtNidn.getText()+ "', " +
+        String sql="UPDATE tbl_mahasiswa "+
+                   "SET nim='"+jTxtNim.getText()+ "', " +
                    "nama='"+jTxtNama.getText()+ "', " +
-                   "alamat='"+jTextAreaAlamat.getText()+ "', " +
+                   "angkatan='"+jTxtAngkatan.getText()+ "', " +
+                   "alamat='"+jTxtAreaAlamat.getText()+ "', " +
                    "email='"+jTxtEmail.getText()+ "', " +
                    "telp='"+jTxtTelp.getText()+ "' " +
-                   " WHERE nidn='"+jTxtNidn.getText()+"';";
+                   " WHERE nim='"+jTxtNim.getText()+"';";
                      
         try {
             kon.konek();
@@ -235,20 +251,20 @@ public final class fUpdateDosen extends javax.swing.JFrame {
             System.err.println(e.getMessage());
             JOptionPane.showMessageDialog(this,"Data  gagal diupdate");
             setKosongkan();
-            jTxtNidn.requestFocus();
+            jTxtNim.requestFocus();
             return;
         } 
             
             
         JOptionPane.showMessageDialog(this,"Data berhasil diupdate");
         setKosongkan();
-        jTxtNidn.requestFocus();
+        jTxtNim.requestFocus();
                     
     }//GEN-LAST:event_jBtnUpdateMakulMouseClicked
 
-    private void jbtnCariMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCariMakulActionPerformed
+    private void jbtnCariMhsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCariMhsActionPerformed
         // TODO add your handling code here:
-        String sql="SELECT * FROM tbl_dosen WHERE nidn='"+jTxtNidn.getText()+"'";
+        String sql="SELECT * FROM tbl_mahasiswa WHERE nim='"+jTxtNim.getText()+"'";
         try {
             kon.konek();
             kon.st = kon.conn.createStatement();
@@ -262,9 +278,10 @@ public final class fUpdateDosen extends javax.swing.JFrame {
         try{
             while (kon.rs.next()){
                 size++;
-                jTxtNidn.setText(kon.rs.getString("nidn").toString());
+                jTxtNim.setText(kon.rs.getString("nim").toString());
                 jTxtNama.setText(kon.rs.getString("nama").toString());
-                jTextAreaAlamat.setText(kon.rs.getString("alamat").toString());
+                jTxtAngkatan.setText(kon.rs.getString("angkatan").toString());
+                jTxtAreaAlamat.setText(kon.rs.getString("alamat").toString());
                 jTxtEmail.setText(kon.rs.getString("email").toString());
                 jTxtTelp.setText(kon.rs.getString("telp").toString());
             }
@@ -277,11 +294,11 @@ public final class fUpdateDosen extends javax.swing.JFrame {
         } catch(SQLException ex){
         
         }
-    }//GEN-LAST:event_jbtnCariMakulActionPerformed
+    }//GEN-LAST:event_jbtnCariMhsActionPerformed
 
     private void jBtnHapusMakulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnHapusMakulActionPerformed
         // TODO add your handling code here:
-        String sql="DELETE FROM tbl_dosen WHERE nidn='"+jTxtNidn.getText()+"'";
+        String sql="DELETE FROM tbl_mahasiswa WHERE nim='"+jTxtNim.getText()+"'";
         try {
             kon.konek();
             kon.st = kon.conn.createStatement();
@@ -290,13 +307,13 @@ public final class fUpdateDosen extends javax.swing.JFrame {
         } catch (SQLException e){ //jika gagal menghapus
             JOptionPane.showMessageDialog(this, "Penghapusan Gagal");
             setKosongkan();
-            jTxtNidn.requestFocus();
+            jTxtNim.requestFocus();
             return;
         }
         
         JOptionPane.showMessageDialog(this,"Data berhasil dihapus");
         setKosongkan();
-        jTxtNidn.requestFocus();
+        jTxtNim.requestFocus();
     }//GEN-LAST:event_jBtnHapusMakulActionPerformed
 
     private void jBtnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBatalActionPerformed
@@ -321,14 +338,142 @@ public final class fUpdateDosen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(fUpdateDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(fUpdateDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(fUpdateDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(fUpdateDosen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(fUpdateMhs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -461,7 +606,7 @@ public final class fUpdateDosen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new fUpdateDosen().setVisible(true);
+                new fUpdateMhs().setVisible(true);
             }
         });
     }
@@ -476,15 +621,17 @@ public final class fUpdateDosen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTextAreaAlamat;
+    private javax.swing.JTextField jTxtAngkatan;
+    private javax.swing.JTextArea jTxtAreaAlamat;
     private javax.swing.JTextField jTxtEmail;
     private javax.swing.JTextField jTxtNama;
-    private javax.swing.JTextField jTxtNidn;
+    private javax.swing.JTextField jTxtNim;
     private javax.swing.JTextField jTxtTelp;
-    private javax.swing.JButton jbtnCariMakul;
+    private javax.swing.JButton jbtnCariMhs;
     // End of variables declaration//GEN-END:variables
 }

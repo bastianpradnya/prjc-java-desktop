@@ -43,7 +43,7 @@ public class Tentang extends javax.swing.JFrame {
 
         Txttentang.setColumns(20);
         Txttentang.setRows(5);
-        Txttentang.setText("Aplikasi Sistem Informasi Nilai Praktikum\n \nSekolah Tinggi Manajemen Informasi dan Komputer\nAKAKOM YOGYAKARTA\n\n\nCopyright@PrdTeam\n135410106");
+        Txttentang.setText("Aplikasi Sistem Informasi Nilai Praktikum\n \nSekolah Tinggi Manajemen Informasi dan Komputer\nAKAKOM YOGYAKARTA\n\n\nCopyright@PrdTeam\n135410106 : Gusti Putu Agung Satria Pradnya Wibawa\n135410183 : Irhadi\n165410154 : Ega Rijki Firdaus\n165410xxx : Prastyanto Satria Pradana \t\t\t\t165410xxx\n\n");
         jScrollPane1.setViewportView(Txttentang);
 
         jButton1.setText("CLOSE");
@@ -60,26 +60,28 @@ public class Tentang extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel1)
+                        .addGap(0, 179, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(jLabel1)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
